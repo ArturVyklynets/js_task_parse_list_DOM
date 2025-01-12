@@ -28,11 +28,11 @@ function sortList(list) {
   }
 
   const pivot = list[list.length - 1];
-  const left = list.filter((element) => element.salary < pivot.salary);
-  const right = list.filter((element) => element.salary > pivot.salary);
+  const right = list.filter((element) => element.salary < pivot.salary);
+  const left = list.filter((element) => element.salary > pivot.salary);
   const equal = list.filter((element) => element.salary === pivot.salary);
 
-  return [...sortList(right), ...equal, ...sortList(left)];
+  return [...sortList(left), ...equal, ...sortList(right)];
 }
 
 const unsortedEmployees = getEmployees(collectionLi);
